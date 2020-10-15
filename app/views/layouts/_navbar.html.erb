@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom mb-4">
   <a class="navbar-brand" href="#">Smart Idea</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to 'Home', home_path, class: 'nav-link'%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Explore</a>
+         <%= link_to 'Explore', explore_path, class: 'nav-link'%>
       </li>
     </ul>
 
@@ -24,7 +24,7 @@
           Dropdown
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Profile</a>
+          <%= link_to 'Profile', profile_path, class: 'dropdown-item'%>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Help</a>
           <div class="dropdown-divider"></div>
