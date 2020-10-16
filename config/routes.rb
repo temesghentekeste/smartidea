@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations'}
   root "pages#index"
-
+  resources :posts
   get 'home', to: 'pages#home'
   get 'user/:id', to: 'pages#profile', as: :profile
   get 'explore', to: "pages#explore"  

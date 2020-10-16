@@ -1,0 +1,14 @@
+<div class="text-center">
+  <%= form_for(@newPost) do |f| %>
+
+    <div class="field">
+      <%= f.text_field :content, autofocus: true, placeholder: 'Share your idea' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Post" %>
+    </div>
+<% end %>
+</div>
+
+
