@@ -10,30 +10,29 @@
         <p>Profile</p>
       </div>
     </div>
-    
   </div>
+
   <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <p>tweets</p>
-      </div>
-    </div>
+    <% @posts.each do |post| %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <p><%= post.content %></p>
+          </div>
+        </div>
+    <% end %>
   </div>
+  
   <div class="col-sm-3">
-    <div class="card">
+    <div class="card mb-3">
       <div class="card-body">
         <p>who to follow</p>
       </div>
     </div>
-  </div>
-</div>
 
-<%# Trends %>
-<div class="row mt-2">
-  <div class="col-sm-3 offset-sm-9">
     <div class="card">
       <div class="card-body">
         <p>trends</p>
       </div>
     </div>
+  </div>
 </div>

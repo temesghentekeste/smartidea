@@ -1,2 +1,9 @@
-<h1>Pages#explorer</h1>
-<p>Find me in app/views/pages/explorer.html.erb</p>
+  <div class="col-sm-6">
+    <% @posts.each do |post| %>
+        <div class="card">
+          <div class="card-body">
+            <p><%= post.content %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
