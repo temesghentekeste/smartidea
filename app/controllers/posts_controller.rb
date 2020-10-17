@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
    # GET /tweets/new
    def new
-    @post = current_user.posts.build
-  end
+      @post = current_user.posts.build
+   end
 
   # POST /tweets
   # POST /tweets.json

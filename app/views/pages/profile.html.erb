@@ -1,7 +1,3 @@
-<div class="jumbotron">
-  <h1 class="display-3">Jumbo heading</h1>
-  <p class="lead">Welcome <%= @username %></p>
-</div>
 <%# Second row %>
 <div class="row">
   <div class="col-sm-3">
@@ -12,16 +8,38 @@
     </div>
   </div>
 
+ 
   <div class="col-sm-6">
-    <%= render 'components/post_form'%>
-    <% @posts.each do |post| %>
-        <div class="card mb-3">
-          <div class="card-body">
-            <p><%= post.content %></p>
-          </div>
-        </div>
-    <% end %>
-  </div>
+      <%= add_new_post %>
+      <% @posts.each do |post| %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-1 p-1 mr-4">
+                  <figure>
+                    <%= gravatar_for(post.user) %>
+                  </figure>
+                </div>
+                <div class="col-10 p-2">
+                  <p class="post-title">
+                    <span class="author font-weight-bold"><%= post.user.username %></span>
+                    - <span class="created-at text-muted"><%= post.created_at.to_formatted_s(:short) %></span>
+                  </p>
+                  <p class="post-content"><%= post.content %></p>
+                </div>
+                <div class="col-12">
+                  <p class="post-links">
+                    <i class="fas fa-comments g-links"></i>
+                    <i class="fas fa-retweet g-links"></i>
+                    <i class="fas fa-heart g-links"></i>
+                    <i class="fas fa-cloud-upload-alt g-links"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>  
+      <% end %>
+    </div>
   
   <div class="col-sm-3">
     <div class="card mb-3">
@@ -36,4 +54,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="col-12 text-center text-muted  mx-0 mt-5">
+    <p>All Rights Reserved &copy; 2020 <a href="https://uandiprogramming.blogspot.com" target="_blank" class="text-muted text-decoration-none">uandiprogramming</a></p>
 </div>

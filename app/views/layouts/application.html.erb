@@ -6,13 +6,50 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render '/layouts/navbar'%>
-    <div class="container">
+
+   <% 
+=begin %>  <% ruby_code %>
+      <% if user_signed_in? %>
+        <div class="profile-banner my-0">
+          <%= image_tag('profile-banner')%>
+        </div>
+      <% end %>
+    <% 
+=end %>
+<% if params[:id] != nil %>
+  <% @URL = "/user/#{params[:id]}"%>
+  <% if current_page?(@URL)%>
+    <div class="profile-banner my-0">
+          <%= image_tag('profile-banner')%>
+    </div>
+    <div class="container mt-2">
+      <div class="row text-center">
+        <div class="col-2">&nbsp;</div>
+        <div class="col-4 ml-4 pl-0 d-flex">
+          <div class="mr-4">Smart Ideas <br>
+            <h6 class="text-left text-primary">18</h6>
+          </div>
+          <div>Followers <br>
+            <h6 class="text-left text-primary">10.8K</h6>
+          </div>
+        </div>
+        <div class="col-4 pr-4">
+           <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-outline-info float-right mr-4"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+    <div class="container-fluid">
       <span class="notice"><%= notice %></span>
       <span class="alert"><%= alert %></span>
       <%= yield %>

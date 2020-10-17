@@ -1,7 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background: rgba(212, 216, 212, .25);
+  background: rgba(0, 0, 0, 0);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .navbar {
@@ -27,5 +28,98 @@ body {
     margin-top: .8rem;
     margin-right: .3rem;
     font-family: sans-serif;
+  }
+}
+
+// .guest_bg {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   height: 100vh;
+//   background: url(../../assets/images/guest_bg.png) no-repeat center center fixed;
+//   background-size: cover;
+// }
+
+.guest-landing {
+  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.7)), url(../../assets/images/guest_bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+
+  .container-guest {
+    margin-right: 15%;
+    margin-left: 18%;
+
+    h1 {
+      margin-top: 7rem;
+      font-weight: 600;
+      font-size: 2.4rem;
+    }
+
+    .guest-text {
+      font-size: 1.1rem;
+    }
+  }
+
+  .login-card {
+    margin-top: 7rem;
+  }
+
+  .login-card {
+    width: 300px;
+    height: 150px;
+  }
+
+  .signup-card {
+    width: 300px;
+    height: 250px;
+  }
+  
+}
+
+.g-links {
+  opacity: .7;
+  font-size: 120%;
+  text-align: left;
+  margin-right: 4rem;
+}
+
+.btn-post {
+  text-align: left;
+}
+
+.user-info {
+  top: 30;
+  left: 20;
+}
+
+
+
+// .card {
+//   position:relative;
+// }
+  
+// .card .profile-info {
+//   position: absolute;
+//   top: 120px;
+// }
+
+// .card .profile-footer {
+//   margin-top: 4rem;
+// }
+
+.profile-banner {
+  height: 500px;
+  img {
+    width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
   }
 }

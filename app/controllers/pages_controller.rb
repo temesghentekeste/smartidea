@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   
   def home
     @posts = Post.all
+    if user_signed_in?
+      @newPost = current_user.posts.build
+    end
   end
 
   def profile
