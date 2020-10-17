@@ -1,11 +1,28 @@
 <%# Second row %>
 <div class="row">
   <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
-        <p>Profile</p>
+    <% if @user_profile %>
+      <div class="card border-0" style="width: 100%;">
+        <%= image_tag('profile-banner', class: 'card-img-top')%>
+        <div class="card-body d-flex p-0 pt-2 ml-3 profile-info">
+          <div class="ml-5 pl-4 mr-2 mt-1">
+            <%= gravatar_for(@user_profile)%>
+          </div>
+          <div class="profile-username">
+            <p class="my-0"><%= @user_profile.username%></p>
+            <p>@<%= @user_profile.username%></p>
+          </div>
+        </div>
+        <div class="card-footer profile d-flex justify-content-between">
+          <div>Smart Ideas <br>
+            <h6>18</h6>
+          </div>
+          <div>Followers <br>
+            <h6>10.8K</h6>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
  
@@ -43,9 +60,14 @@
   
   <div class="col-sm-3">
     <div class="card mb-3">
-      <div class="card-body">
-        <p>who to follow</p>
+      <div class="card-header">
+        Who To Follow
       </div>
+      <ul class="list-group list-group-flush">
+        <% @toFollow.each do |follow|%>
+            <li class="list-group-item">@<%= follow.username%></li>
+        <% end %>
+      </ul>
     </div>
 
     <div class="card">

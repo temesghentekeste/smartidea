@@ -24,15 +24,28 @@
       <% end %>
     <% 
 =end %>
-<% if params[:id] != nil %>
+<% if params[:id] != nil && @user_profile %>
   <% @URL = "/user/#{params[:id]}"%>
   <% if current_page?(@URL)%>
-    <div class="profile-banner my-0">
+    <div class="profile-banner mt-0 ">
           <%= image_tag('profile-banner')%>
     </div>
-    <div class="container mt-2">
+    <div class="container mt-3">
       <div class="row text-center">
-        <div class="col-2">&nbsp;</div>
+        <div class="col-2">
+          <% if @user_profile %>
+            <div class="card border-0" style="width: 100%;">
+              <div class="card-body d-flex flex-column mx-auto p-0 profile-info">
+                <div class="mt-0">
+                  <%= gravatar_for(@user_profile)%>
+                </div>
+                <div class="profile-username">
+                  <p>@<%= @user_profile.username%></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
         <div class="col-4 ml-4 pl-0 d-flex">
           <div class="mr-4">Smart Ideas <br>
             <h6 class="text-left text-primary">18</h6>

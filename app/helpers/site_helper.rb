@@ -20,4 +20,5 @@ module SiteHelper
       render '/components/post_form'
     end
   end
+
 end

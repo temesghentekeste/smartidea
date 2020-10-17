@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :set_to_follow
   def index
   end
   
@@ -25,4 +26,10 @@ class PagesController < ApplicationController
   def explore
     @posts = Post.all
   end
+
+  private 
+    def set_to_follow
+      current_username = current_user.username
+      @toFollow = User.where.not(username: current_username)
+    end
 end
