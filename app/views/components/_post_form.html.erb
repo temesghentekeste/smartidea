@@ -1,14 +1,21 @@
-<div class="text-center">
-  <%= form_for(@newPost) do |f| %>
+<div class="card text-center mb-4">
+  <div class="card-body d-flex align-items-start px-0">
+      <figure class="col-1 mr-3">
+          <%= gravatar_for(@newPost.user) %>
+      </figure>
+      <%= form_for(@newPost, :html=> {class: "ml-1 col-10"}) do |f| %>
+        <div class="form-group">
+            <div class="mt-1">
+                <%= f.text_field  :content, class: "form-control d-block", placeholder: "Share your idea", autofocus: true %>
+            </div>
+        </div>
 
-    <div class="field">
-      <%= f.text_field :content, autofocus: true, placeholder: 'Share your idea' %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Post" %>
-    </div>
-<% end %>
+        <div class="actions col-12 text-left px-0">
+          <%= f.submit "Post", class: 'btn btn-info btn-post float-right' %>
+        </div>
+      <% end %>
+  </div>
+ 
 </div>
 
 
