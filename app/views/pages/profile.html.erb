@@ -65,7 +65,9 @@
       </div>
       <ul class="list-group list-group-flush">
         <% @toFollow.each do |follow|%>
-            <li class="list-group-item">@<%= follow.username%></li>
+            <span class="list-group-item">
+               @<%= link_to follow.username, profile_path(follow.username), class: 'text-decoration-none font-weight-600 text-dark'%>
+            </span>
         <% end %>
       </ul>
     </div>

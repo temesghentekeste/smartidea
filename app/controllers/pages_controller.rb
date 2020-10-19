@@ -25,11 +25,14 @@ class PagesController < ApplicationController
   
   def explore
     @posts = Post.all
+    @newPost = current_user.posts.build if user_signed_in?
   end
 
   private 
     def set_to_follow
-      current_username = current_user.username
-      @toFollow = User.where.not(username: current_username)
+      if user_signed_in?
+        current_username = current_user.username
+        @toFollow = User.where.not(username: current_username)
+      end
     end
 end
