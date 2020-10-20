@@ -14,10 +14,10 @@
         </div>
         <div class="card-footer profile d-flex justify-content-between">
           <div>Smart Ideas <br>
-            <h6>18</h6>
+            <h6><%= current_user.posts.count %></h6>
           </div>
           <div>Followers <br>
-            <h6>10.8K</h6>
+            <h6><%= current_user.followers.count %></h6>
           </div>
         </div>
       </div>

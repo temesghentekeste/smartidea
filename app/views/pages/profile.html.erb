@@ -59,6 +59,7 @@
     </div>
   
   <div class="col-sm-3">
+  <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
     <div class="card mb-3">
       <div class="card-header">
         Who To Follow
@@ -68,6 +69,7 @@
             <span class="list-group-item">
                @<%= link_to follow.username, profile_path(follow.username), class: 'text-decoration-none font-weight-600 text-dark'%>
             </span>
+            
         <% end %>
       </ul>
     </div>
